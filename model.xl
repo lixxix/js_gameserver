@@ -1,0 +1,36 @@
+// primaryKey, autoIncrement, comment,unique,timestamps,allowNull,createdAt,updatedAt 
+// 如果 model中重新写了[option]方法则生成时使用重写的方法
+[option]
+    timestamps:false
+
+User
+    id:int
+        primaryKey
+        autoIncrement
+    account:string(32)
+        unique
+    nick:string(32)
+        unique
+    password:string(32)
+    gold:bigint
+        defaultValue:1000
+        allowNull:false
+    medal:int
+        defaultValue:10
+        allowNull:false
+    avatar:string(128)
+    [option]
+        updatedAt:false
+
+Answer
+    id:int
+        primaryKey
+        autoIncrement
+    type:int
+        defaultValue:1
+    hard:int
+        defaultValue:1
+    question:string(256)
+    anwser:int
+        defaultValue:0
+    selection:string(256)

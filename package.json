@@ -1,0 +1,32 @@
+{
+  "name": "js_gameserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:js": "pbjs --dependency protobufjs/minimal.js --keep-case --target static-module --wrap commonjs --out ./Proto.js/proto.js ./proto/*.proto",
+    "build:ts": "pbts --main --out ./Proto.js/proto.d.ts ./Proto.js/*.js",
+    "build:proto": "pbjs --dependency protobufjs/minimal.js --keep-case --target static-module --wrap commonjs --out ./Proto.js/proto.js ./proto/*.proto && pbts --main --out ./Proto.js/proto.d.ts ./Proto.js/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mariadb": "^2.5.5",
+    "protobufjs": "^6.11.2",
+    "sequelize": "^6.9.0",
+    "sqlite3": "^5.0.2",
+    "ws": "^8.2.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.6",
+    "@types/sequelize": "^4.28.10",
+    "@types/ws": "^8.2.0",
+    "sequelize-cli": "^6.2.0",
+    "ts-node": "^10.4.0"
+  }
+}

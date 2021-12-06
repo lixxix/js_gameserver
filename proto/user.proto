@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package user;
+
+message Login {
+    string name = 1;
+    string pwd = 2;
+}
+
+message LoginSuccess {
+    string  name = 1;
+    int32   id = 2;
+    int64   gold = 3;
+}
+
+message ErrorInfo {
+  int32  code = 1;
+  string message = 2;
+}
+
+message EnterGame {
+  int32   gameid = 1;  //请求游戏
+}

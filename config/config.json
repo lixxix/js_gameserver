@@ -1,0 +1,25 @@
+{
+  "development": {
+    "storage": "db.sqlite",
+    "dialect": "sqlite",
+    "logging":false
+  },
+  "test": {
+    "username": "root",
+    "password": "...",
+    "database":  "....",
+    "host": "....",
+    "port":3307,
+    "dialect": "mysql",
+    "timezone":"+08:00"
+  },
+  "production": {
+    "username": "root",
+    "password": "....",
+    "database":  "....",
+    "host": "127.0.0.1",
+    "port":3307,
+    "dialect": "mysql",
+    "timezone":"+08:00"
+  }
+}

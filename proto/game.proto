@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package game;
+
+message GameMatching
+{
+    bool matching = 1;  //是否匹配还是取消
+}
+
+message PlayerInfo {
+    int32 userid = 1;
+    int32 index = 2;
+    string nickname=3;
+    int64 gold=4;
+}
+
+message PlayerInfos
+{
+    repeated PlayerInfo player=1;
+}
+
+message QuestionData {
+    int32  id = 1;
+    string question = 2;
+    string selection = 3;
+}
+  
+message QuestionAnswer {
+    int32   index = 1;
+}
+
+message QuestionResult {
+    int32   user = 1; //可以使用座位号
+    bool    right = 2;
+    int32   selection = 3;
+    int32   rightindex = 4;
+    int32   score = 5;
+}
+
+message PlayerScore {
+    int32   index = 1;      //位置  
+    int32   score = 2;      //得分
+}
+  
+message PlayerScores {
+    repeated PlayerScore scores = 1;
+}
+
+//给个人发的消息
+message GameResult {
+    bool    win = 1;
+    int32   gold = 2;
+}
